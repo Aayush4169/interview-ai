@@ -81,7 +81,7 @@ const skilGapSchema = new mongoose.Schema(
       required: [true, "Skill is required"],
     },
     severity: {
-      type: string,
+      type: String,
       enum: ["low", "medium", "high"],
       required: [true, "severity is required"],
     },
@@ -129,6 +129,10 @@ const interviewReportSchema = new mongoose.Schema(
     behavioralQuestions: [behavioralQuestionSchema],
     skillGaps: [skilGapSchema],
     preparationPlan: [preparationPlanSchema],
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
   },
   {
     timestamps: true,
@@ -136,6 +140,6 @@ const interviewReportSchema = new mongoose.Schema(
 );
 const interviewReportModel = mongoose.model(
   "InterviewReport",
-  interviewreportSchema,
+  interviewReportSchema,
 );
 module.exports = interviewReportModel;

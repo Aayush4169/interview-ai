@@ -1,0 +1,76 @@
+{
+    "matchScore": 90,
+    "technicalQuestions": [
+        {
+            "question": "Explain the request-response cycle in a MERN stack application. How does data flow between the frontend and backend?",
+            "intention": "To test the candidate's understanding of how React communicates with Node/Express and how data is managed.",
+            "answer": "Describe how React triggers an API call (using Fetch or Axios), which hits the Node/Express server. Mention that the server processes the request (middleware, validation, database query) and sends a JSON response back to the client, which then updates the state to re-render the UI."
+        },
+        {
+            "question": "What is the difference between SQL and NoSQL databases, and why did you choose MongoDB for your projects?",
+            "intention": "To verify if the candidate understands the tradeoffs between relational and document-based databases.",
+            "answer": "Explain that SQL is schema-based and good for complex relationships, while MongoDB (NoSQL) is flexible/schema-less and scales well for rapid development. Highlight that in your MERN projects, the document structure mapped well to JSON objects used in JavaScript."
+        },
+        {
+            "question": "How do you manage state in a complex React application, and when would you use Context API versus Redux?",
+            "intention": "To gauge proficiency in React state management beyond basic useState hooks.",
+            "answer": "Explain that local state is fine for small components, but for global data (like user auth), Context API is sufficient for many use cases. Mention Redux is preferred for highly complex state transitions or when debugging time-travel is needed."
+        }
+    ],
+    "behavioralQuestions": [
+        {
+            "question": "Tell me about a challenging bug you encountered in one of your projects and how you resolved it.",
+            "intention": "To assess problem-solving skills and persistence.",
+            "answer": "Use the STAR method (Situation, Task, Action, Result). Focus on your systematic debugging approach—checking console logs, network tabs, or isolating specific modules until the root cause was identified."
+        },
+        {
+            "question": "How do you handle feedback or constructive criticism during code reviews?",
+            "intention": "To check for coachability and teamwork, which is critical for an intern.",
+            "answer": "Emphasize that you view code reviews as a learning opportunity. Mention that you don't take critiques personally and instead focus on how the suggestions improve the robustness and readability of the code."
+        }
+    ],
+    "skillGaps": [
+        {
+            "skill": "TypeScript",
+            "severity": "low"
+        },
+        {
+            "skill": "CI/CD Pipelines",
+            "severity": "medium"
+        },
+        {
+            "skill": "Unit Testing (Jest/Cypress)",
+            "severity": "medium"
+        }
+    ],
+    "preparationPlan": [
+        {
+            "day": 1,
+            "focus": "Deep Dive into MERN Architecture",
+            "tasks": [
+                "Review asynchronous patterns in Node.js",
+                "Practice advanced MongoDB aggregation pipelines",
+                "Refactor one component in your projects to use TypeScript"
+            ]
+        },
+        {
+            "day": 2,
+            "focus": "Testing and Quality Assurance",
+            "tasks": [
+                "Learn the basics of Jest for Node.js backend testing",
+                "Watch a tutorial on React Testing Library",
+                "Write at least one test case for your ERP project"
+            ]
+        },
+        {
+            "day": 3,
+            "focus": "System Design and Optimization",
+            "tasks": [
+                "Understand RESTful API best practices and status codes",
+                "Review database indexing to optimize query performance",
+                "Mock interview practice focusing on MERN project explanation"
+            ]
+        }
+    ],
+    "title": "Full Stack Intern"
+}
