@@ -170,4 +170,39 @@ async function generateResumePdf({ resume, selfDescription, jobDescription }) {
   const pdfBuffer = await generatePdfFromHtml(jsonContent.html);
   return pdfBuffer;
 }
-module.exports = { generateInterviewReport, generateResumePdf };
+///  quize genration systemmm
+const quizQuestionsSchema = z.object({
+  questions: z
+    .array(
+      z.object({
+        question: z.string().describe("The MCQ question"),
+        options: z.array(z.string()).length(4).describe("Exactly 4 options"),
+        correctAnswer: z.number().describe("Index of correct option (0-3)"),
+        explanation: z.string().describe("Why this is the correct answer"),
+      }),
+    )
+    .describe("List of MCQ questions for the given subject"),
+});
+
+////
+async function generateQuizQuestions({ subject, numberOfQuestions }) {
+  const prompt = `Generate ${numberOfQuestions} MCQ questions for the subject "${subject}".
+  Questions should range from beginner to advanced level.
+  Each question must have exactly 4 options with only one correct answer.`;
+
+  const response = await ai.models.generateContent({
+    model: "gemini-3.1-flash-lite",
+    contents: prompt,
+    config: {
+      responseMimeType: "application/json",
+      responseSchema: quizQuestionsSchema.toJSONSchema(),
+    },
+  });
+
+  return JSON.parse(response.text);
+}
+module.exports = {
+  generateInterviewReport,
+  generateResumePdf,
+  generateQuizQuestions,
+};

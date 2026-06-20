@@ -371,3 +371,23 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
         }
     }
 }
+
+// --- quize button----
+
+.quiz-btn {
+  margin-top: 1rem;
+  background: transparent;
+  color: #e11d48;
+  border: 2px solid #e11d48;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #e11d48;
+    color: white;
+  }
+}
