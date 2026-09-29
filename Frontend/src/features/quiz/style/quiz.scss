@@ -239,4 +239,84 @@
     &--pass { color: #22c55e; }
     &--fail { color: #f59e0b; }
   }
+
+  // Live Quiz
+.live-room {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+
+  h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  p { color: #94a3b8; margin-bottom: 1.5rem; }
+}
+
+.players-list {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  h2 { margin-bottom: 1rem; }
+}
+
+.player-item {
+  padding: 0.8rem 1rem;
+  background: #0f172a;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+
+  &--waiting { color: #94a3b8; font-weight: normal; }
+}
+
+.live-scoreboard {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.live-score-pill {
+  background: #1e293b;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.live-scores {
+  margin-top: 1rem;
+}
+
+.live-score-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: #0f172a;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.timer {
+  font-weight: bold;
+  &--danger { color: #e11d48; }
+}
+
+.quiz-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+
+  &:focus { border-color: #e11d48; }
+}
+
+.quiz-error {
+  color: #e11d48;
+  margin-top: 0.5rem;
+}
 }

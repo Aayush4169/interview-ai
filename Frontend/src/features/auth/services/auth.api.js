@@ -15,7 +15,8 @@ export async function register({ username, email, password }) {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+    const message = err.response?.data?.message || "Registration failed";
+    throw new Error(message);
   }
 }
 
@@ -28,7 +29,8 @@ export async function login({ email, password }) {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+    const message = err.response?.data?.message || "Login failed";
+    throw new Error(message);
   }
 }
 
@@ -38,7 +40,8 @@ export async function logout() {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+    const message = err.response?.data?.message || "Logout failed";
+    throw new Error(message);
   }
 }
 
@@ -48,6 +51,7 @@ export async function getMe() {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+    const message = err.response?.data?.message || "Not authenticated";
+    throw new Error(message);
   }
 }

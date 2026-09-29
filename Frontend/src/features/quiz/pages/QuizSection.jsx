@@ -75,13 +75,23 @@ export default function QuizSection() {
       </div>
 
       {/* Start Button */}
-      <button
-        className="start-btn"
-        onClick={handleStartQuiz}
-        disabled={!selectedSubject}
-      >
-        🚀 Start Quiz
-      </button>
+           {/* Start Button */}
+      <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+        <button
+          className="start-btn"
+          onClick={handleStartQuiz}
+          disabled={!selectedSubject}
+        >
+          🚀 Start Quiz
+        </button>
+        <button
+          className="start-btn"
+          style={{ background: "transparent", border: "2px solid #e11d48" }}
+          onClick={() => navigate("/quiz/live")}
+        >
+          ⚡ Live Quiz
+        </button>
+      </div>
 
       {/* Previous Quizzes */}
       <PreviousQuizzes />

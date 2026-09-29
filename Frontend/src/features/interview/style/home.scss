@@ -220,6 +220,25 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
         background-color: rgba($accent, 0.05);
     }
 
+    &--active {
+        border-color: #3b82f6;
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+
+    &--uploaded {
+        border-color: #10b981;
+        background-color: rgba(16, 185, 129, 0.08);
+
+        .dropzone__icon {
+            color: #10b981;
+        }
+
+        .dropzone__title {
+            color: #10b981;
+            font-weight: 600;
+        }
+    }
+
     &__icon {
         color: $accent;
         margin-bottom: 0.25rem;
@@ -236,6 +255,59 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
         font-size: 0.75rem;
         color: $text-muted;
         margin: 0;
+    }
+
+    &__file-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+        font-size: 0.8rem;
+        color: #10b981;
+        background: rgba(16, 185, 129, 0.15);
+        padding: 0.25rem 0.6rem;
+        border-radius: 0.4rem;
+    }
+
+    &__remove-btn {
+        margin-top: 0.5rem;
+        background: transparent;
+        border: 1px solid rgba(239, 68, 68, 0.4);
+        color: #ef4444;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+            background: rgba(239, 68, 68, 0.15);
+        }
+    }
+}
+
+// ── Notification Banner ────────────────────────────────────────────────────────
+.upload-notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.4rem;
+    font-size: 0.825rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+
+    &--success {
+        background-color: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #34d399;
+    }
+
+    &--error {
+        background-color: rgba(239, 68, 68, 0.15);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #f87171;
     }
 }
 

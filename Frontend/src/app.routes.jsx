@@ -38,6 +38,8 @@ import Interview from "./features/interview/pages/Interview"
 import QuizSection from "./features/quiz/pages/QuizSection"
 import QuizPlay from "./features/quiz/pages/QuizPlay"
 import QuizResult from "./features/quiz/pages/QuizResult"
+import LiveQuizLobby from "./features/quiz/pages/LiveQuizLobby"
+import LiveQuizRoom from "./features/quiz/pages/LiveQuizRoom"
 
 export const router = createBrowserRouter([
     {
@@ -69,5 +71,14 @@ export const router = createBrowserRouter([
 {
   path: "/quiz/:quizId/result",
   element: <Protected><QuizResult /></Protected>
+},
+{
+  path: "/quiz/live",
+  element: <Protected><LiveQuizLobby /></Protected>
+},
+{
+  path: "/quiz/live/:roomCode",
+  element: <Protected><LiveQuizRoom /></Protected>
 }
+
 ])
